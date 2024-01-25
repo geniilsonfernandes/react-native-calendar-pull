@@ -1,6 +1,6 @@
 {
   "name": "react-native-calendar-pull",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "react native calendar",
   "main": "index.ts",
   "scripts": {
@@ -9,6 +9,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/geniilsonfernandes/react-native-calendar-pull"
+  },
+  "keywords": [
+    "react-native",
+    "calendar"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   },
   "author": "",
   "license": "ISC"

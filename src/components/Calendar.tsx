@@ -12,12 +12,19 @@ import { capitalize } from "../utils";
 const rootStyle = {
   width: 328,
 };
-
+type Theme = {
+  day: {
+    default: string;
+    selected: string;
+    today: string;
+  };
+};
 type CalendarProps = {
   onChangeDay?: (day: CalendarDay) => void;
+  theme?: Theme;
 };
 
-const Calendar = ({ onChangeDay }: CalendarProps) => {
+const Calendar = ({ onChangeDay, theme }: CalendarProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [dayPressed, setDayPressed] = useState<CalendarDay>();
   const {
@@ -119,6 +126,7 @@ const Calendar = ({ onChangeDay }: CalendarProps) => {
 
                 onChangeDay?.(day);
               }}
+              theme={theme?.day}
               containerWidth={rootStyle.width}
               days={month}
               daypressed={dayPressed}

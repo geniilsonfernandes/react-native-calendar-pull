@@ -1,6 +1,6 @@
 {
   "name": "react-native-calendar-pull",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "react native calendar",
   "main": "src/index.ts",
   "scripts": {

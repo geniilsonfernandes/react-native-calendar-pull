@@ -7,12 +7,23 @@ type DayProps = {
   days: CalendarDay[];
   onDayPress: (day: CalendarDay) => void;
   daypressed?: CalendarDay;
+  theme?: {
+    default: string;
+    selected: string;
+    today: string;
+  };
 };
-const Days = ({ containerWidth, days, onDayPress, daypressed }: DayProps) => {
+const Days = ({
+  containerWidth,
+  days,
+  onDayPress,
+  daypressed,
+  theme,
+}: DayProps) => {
   const colors = {
-    default: "#ececec",
-    selected: "#d4d4d4",
-    today: "#b9b9b9",
+    default: theme?.default || "#ececec",
+    selected: theme?.selected || "#d4d4d4",
+    today: theme?.today || "#b9b9b9",
   };
   return (
     <View
@@ -30,8 +41,8 @@ const Days = ({ containerWidth, days, onDayPress, daypressed }: DayProps) => {
           onPress={() => onDayPress(day)}
           disabled={day.disabled}
           style={{
-            width: (containerWidth - 20) / 7,
-            height: (containerWidth - 20) / 7,
+            width: containerWidth / 8,
+            height: containerWidth / 8,
             borderRadius: 45,
             justifyContent: "center",
             alignItems: "center",
